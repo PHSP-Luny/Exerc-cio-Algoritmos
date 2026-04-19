@@ -1,0 +1,159 @@
+#include <iostream> //Biblioteca de comandos de entrada e saída de dados C++
+using namespace std; //Você faz isso para não precisar colocar std:: antes do cout
+/*std:: cin>>
+std:: cout<<
+*/
+int main () {
+int numero; //Armazena inteiros
+cout<<"Digite um inteiro: "; //Mostra o conteúdo do cout na tela, se precisar de outro comando utilizar '<<' após assim como na linha 10 e 11
+cin>>numero; //Cadastra uma informação na variável desejada
+cout<<numero-1<<"\n"; //endL pula a linha
+cout<<numero<<"\n"; //"/n" também pula linha
+cout<<numero+1;
+return 0; //ou exit(0);
+}
+====================================================================
+#include <iostream>
+using namespace std;
+
+int main() {
+float nota1;
+float nota2;
+
+cout<<"Digite a primeira nota: ";
+cin>>nota1;
+cout<<"Digite a segunda nota: ";
+cin>>nota2;
+cout<<"A média das notas é: "<<(nota1+nota2)/2;
+return 0; 
+}
+====================================================================
+#include <iostream>
+using namespace std;
+
+int main() {
+	float salario, c1, c2, sobra, c1j, c2j;
+	salario = 1200;
+	c1 = 200;
+	c2 = 120;
+	
+	c1j = c1+c1*2/100;
+	c2j = c2+c2*0.02;
+	
+	sobra = salario-c1j-c2j;
+	cout<<"Sobrou "<<sobra;
+}
+/* Outra forma de fazer
+int main() {
+    float sobra;
+    sobra = 1200-200*1.02-120*1.02;
+    
+    cout<<"Sobrou"<<sobra;
+}*/
+====================================================================
+#include <iostream>
+using namespace std;
+
+int main(){
+float P1, T1, M1;//P = Prova, T = Trabalho, M = Média
+
+cout<<"Informe sua P1: ";
+cin>>P1;
+cout<<"Informe sua T1: ";
+cin>>T1;
+M1 = (P1*6+T1*4)/10;
+if(M1>=6){
+cout<<"Você está na média.";
+}else{
+cout<<"Você está a "<<6-M1<<" pontos da média.";
+}
+}
+====================================================================
+#include <iostream>
+using namespace std;
+
+int main(){
+    
+    long int ean13;
+    
+    cout<<"digite o número: ";
+    cin>>ean13;
+    
+    cout<<"\n\n"<<ean13;
+    return 0;
+}
+====================================================================
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    
+    cout<<"digite o número: ";
+    cin>>n;
+    cout<<"\n"<<n;
+    return 0;
+}
+====================================================================
+#include <iostream>
+using namespace std;
+
+int main(){
+    
+    int D1, D2, N, resto, resultado; //D = Divisão, N = Número
+    
+    N = 123456789;
+    resto = 1234%10;
+    cout<<"\n"<<resto;
+    resultado = 1234/10;
+     cout<<"\n"<<resultado;
+    resto = resultado%10;
+     cout<<"\n"<<resultado;
+    
+    D1 = N%10;
+    cout<<"\n"<<D1;
+    D2 = (N/10)%10;
+    cout<<"\n"<<D2;
+    
+    return 0;
+}
+====================================================================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float salario, total;
+    int cont;
+    cont = 0;
+    total = 0;
+    
+    while(cont<10){
+        cout<<"Informe o salário: ";
+        cin>>salario;
+        total = total+salario;
+        cont++;
+    }
+    cout<<total;
+    return 0;
+}
+====================================================================
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float altChico, altZe;
+    int anos;
+    anos = 0;
+    altChico = 1.50;
+    altZe = 1.10;
+    
+    while(altZe<=altChico){
+        anos++;
+        altZe += 0.03;
+        altChico += 0.02;
+        cout<<"A altura de Zé é de "<<altZe<<" e a de Chico "<<altChico<<" em "<<anos<<" anos."<<endl;
+    }
+    return 0;
+}
