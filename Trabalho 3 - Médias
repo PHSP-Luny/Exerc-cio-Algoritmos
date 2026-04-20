@@ -1,0 +1,57 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+float calcMedia(float notas[]){
+    return (notas[0]+notas[1]+notas[2])/3;
+}
+
+int main()
+{
+    int sair;
+    for(sair = 1; sair != 2;sair){
+        cout << "Calcular Media - 1\nSair - 2\n\n";
+        cin >> sair;
+        if(sair!=2){
+            int alunos;
+            cout << "Quantos alunos serão cadastrados? (1-5)\n";
+            cin >> alunos;
+        
+            if (alunos < 1 || alunos > 5){
+                cout << "Cadastrar mínimo de 1 e máximo de 5 alunos";
+                return 0;
+            }
+        
+            string nomes[5],situacao[5];
+            float notas[5][3], mediaT[5];
+        
+            for(int i=0;i<alunos;i++){
+                cout << "\nNome do aluno: ";
+                cin >> nomes[i];
+                for(int j=0;j<3;j++){
+                    cout << "Nota " << j+1 << ": ";
+                    cin >> notas[i][j];
+                }
+                mediaT[i] = calcMedia(notas[i]);
+                if(mediaT[i] >=7){
+                    situacao[i] = "Aprovado";
+                }else{
+                    situacao[i] = "Reprovado";
+                }
+            }
+            
+            cout << "\nNome\tNota1\tNota2\tNota3\tMedia\tSituação\n";
+            cout << "---------------------------------------------\n";
+            for(int i=0;i<alunos;i++){
+                cout << nomes[i] << "\t"
+                     << notas[i][0] << "\t"
+                     << notas[i][1] << "\t"
+                     << notas[i][2] << "\t"
+                     << mediaT[i] << "\t"
+                     << situacao[i] << endl;
+            }
+            cout << "\n\n"
+        }
+    }
+    return 0;
+}
